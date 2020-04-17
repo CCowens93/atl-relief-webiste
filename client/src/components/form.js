@@ -9,23 +9,23 @@ class Form extends Component {
         email: '',
         phone: '',
         address: '',
-        call: false,
-        text: false,
-        emailPref: false,
-        paperMailer: false,
+        call: '',
+        text: '',
+        emailPref: '',
+        paperMailer: '',
         age: '',
         job: '',
         medicalRelief: '',
-        helpElderlyAndOrDisabled: false,
-        deliverFood: false,
-        mealPrep: false,
-        sewing: false,
-        deliverMailers: false,
-        host: false,
-        coverExpenses: false,
-        searchForItems: false,
-        updates: false,
-        none: false,
+        helpElderlyAndOrDisabled: '',
+        deliverFood: '',
+        mealPrep: '',
+        sewing: '',
+        deliverMailers: '',
+        host: '',
+        coverExpenses: '',
+        searchForItems: '',
+        updates: '',
+        none: '',
         other: '',
         formList: []
     }
@@ -46,11 +46,11 @@ class Form extends Component {
     }
 
     componentDidMount() {
-        axios.get('api/form')
-            .then((response => {
-                this.setState({formList: response.data})
+        axios.get('/api/form')
+            .then((response) => {
+                this.setState({ formList: response.data })
                 console.log(response.data)
-            }))
+            })
             .catch((error) => {
                 console.log(error)
             })
@@ -80,13 +80,12 @@ class Form extends Component {
         return (
             <div>
                 <div className="VolunteerForm">
-                    <form>
-                        <p>Volunteer</p>
+                    <form onSubmit={this.handleSubmit}>
+                        <p>Volunteer Name</p>
 
                         <input
                             name="name"
                             type="text"
-                            placeholder="Volunteer Name"
                             value={this.state.formList.name}
                             onChange={this.changeHandler}
                         />
@@ -96,8 +95,15 @@ class Form extends Component {
                         <input
                             name="email"
                             type="text"
-                            placeholder="E-mail"
                             value={this.state.formList.email}
+                            onChange={this.changeHandler}
+                        />
+
+                        <p>Phone Number</p>
+                        <input
+                            name="phone"
+                            type="number"
+                            value={this.state.formList.phone}
                             onChange={this.changeHandler}
                         />
 
@@ -107,46 +113,54 @@ class Form extends Component {
                         <input
                             name="address"
                             type="text"
-                            placeholder="Address"
                             value={this.state.formList.address}
                             onChange={this.changeHandler}
                         />
 
                         <p>Contact Preference</p>
                         <p>Call</p>
-                        <input
+                        <select
                             name="call"
-                            type="checkbox"
                             onChange={this.changeHandler}
-                            value={this.state.formList.call ? this.state.call.value: !this.state.call.value}
+                            value={this.state.formList.call}>
+                            <option value="" hidden>Select</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
 
-                        />
+                        </select>
                         <p>Text</p>
-                        <input
+                        <select
                             name="text"
-                            type="checkbox"
                             onChange={this.changeHandler}
-                            value={this.state.formList.text}
+                            value={this.state.formList.text}>
+                            <option value="" hidden>Select</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
 
-                        />
+                        </select>
                         <br></br>
                         <p>Email</p>
-                        <input
+                        <select
                             name="email"
-                            type="checkbox"
                             onChange={this.changeHandler}
-                            value={this.state.formList.email}
+                            value={this.state.formList.emailPref}>
+                            <option value="" hidden>Select</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
 
-                        />
+                        </select>
                         <br></br>
                         <p>Paper Mailer</p>
-                        <input
+                        <select
                             name="paperMailer"
                             type="checkbox"
                             onChange={this.changeHandler}
-                            value={this.state.formList.paperMailer}
+                            value={this.state.formList.paperMailer}>
+                            <option value="" disabled hidden></option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                            </select>
 
-                        />
                         <br></br>
                         <p>Age Range</p>
                         <select
@@ -165,92 +179,121 @@ class Form extends Component {
                             name="medicalRelief"
                             value={this.state.formList.medicalRelief}
                             onChange={this.changeHandler}>
-                            <option value="" disabled hidden>Medical Relief</option>
+                            <option value="" hidden>Select</option>
                             <option value="Yes">Yes</option>
                             <option value="No">No</option>
                             <option value="Maybe">Maybe</option>
                         </select>
                         <p>How can you, or how would you, best like to help?</p>
                         <p>"Adopting" an elderly or disabled home to check in on and keep updated</p>
-                        <input
+                        <select
                             name="helpElderlyAndOrDisabled"
-                            type="checkbox"
                             onChange={this.changeHandler}
-                            value={this.state.formList.helpElderlyAndOrDisabled}
-
-                        />
+                            value={this.state.formList.helpElderlyAndOrDisabled}>
+                            <option value="" hidden>Select</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                            </select>
+                        
                         <p>Delivering food and necessity items to homes</p>
-                        <input
+                        <select
                             name="deliverFood"
-                            type="checkbox"
                             onChange={this.changeHandler}
-                            value={this.state.formList.deliverFood}
+                            value={this.state.formList.deliverFood}>
+                            <option value="" hidden>Select</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
 
-                        />
+                        
                         <p>Meal Preperation (for those who cannot cook for themselves)</p>
-                        <input
+                        <select
                             name="mealPrep"
-                            type="checkbox"
                             onChange={this.changeHandler}
-                            value={this.state.formList.mealPrep}
+                            value={this.state.formList.mealPrep}>
+                            <option value="" hidden>Select</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
 
-                        />
+
                         <p>Sewing necessity items</p>
-                        <input
+                        <select
                             name="sewing"
-                            type="checkbox"
                             onChange={this.changeHandler}
-                            value={this.state.formList.sewing}
+                            value={this.state.formList.sewing}>
+                            <option value="" hidden>Select</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
 
-                        />
+              
                         <p>Delivering paper information (mailers) to homes</p>
-                        <input
+                        <select
                             name="deliverMailers"
-                            type="checkbox"
                             onChange={this.changeHandler}
-                            value={this.state.formList.deliverMailers}
+                            value={this.state.formList.deliverMailers}>
+                            <option value="" hidden>Select</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
 
-                        />
+               
                         <p>Hosting someone displaced by college or domestic violence shelters closing</p>
-                        <input
+                        <select
                             name="host"
-                            type="checkbox"
                             onChange={this.changeHandler}
-                            value={this.state.formList.host}
+                            value={this.state.formList.host}>
+                            <option value="" hidden>Select</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
 
-                        />
+        
                         <p>Covering small expense for specific needs of a person or family</p>
-                        <input
+                        <select
                             name="coverExpenses"
-                            type="checkbox"
                             onChange={this.changeHandler}
-                            value={this.state.formList.coverExpenses}
+                            value={this.state.formList.coverExpenses}>
+                            <option value="" hidden>Select</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
 
-                        />
+               
                         <p>Searching online for resources and hard-to-find itmes (such as medical accessories)</p>
-                        <input
+                        <select
                             name="searchForItems"
-                            type="checkbox"
                             onChange={this.changeHandler}
-                            value={this.state.formList.searchForItems}
+                            value={this.state.formList.searchForItems}>
+                            <option value="" hidden>Select</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
 
-                        />
+                 
                         <p>I just want to be kept updated with what's going on around me</p>
-                        <input
+                        <select
                             name="updates"
-                            type="checkbox"
                             onChange={this.changeHandler}
-                            value={this.state.formList.updates}
+                            value={this.state.formList.updates}>
+                            <option value="" hidden>Select</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
 
-                        />
+                     
                         <p>None of the above</p>
-                        <input
+                        <select
                             name="none"
-                            type="checkbox"
                             onChange={this.changeHandler}
-                            value={this.state.formList.none}
+                            value={this.state.formList.none}>
+                            <option value="" hidden>Select</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
 
-                        />
+
                         <p>Other</p>
                         <input
                             name="other"

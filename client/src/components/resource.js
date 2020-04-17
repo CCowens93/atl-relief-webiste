@@ -30,7 +30,7 @@ class Resource extends Component {
     }
 
     componentDidMount() {
-        axios.get('api/resource')
+        axios.get('/api/resource')
             .then((response => {
                 this.setState({ resourceList: response.data })
                 console.log(response.data)

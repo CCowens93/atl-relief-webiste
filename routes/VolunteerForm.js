@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const Form = mongoose.model('volunteer')
+const Form = mongoose.model('volunteerForm')
 
 module.exports = (app) => {
     app.get('/api/form', async (req, res) => {

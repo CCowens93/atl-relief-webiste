@@ -5,8 +5,9 @@ import axios from 'axios'
 class Volunteer extends Component{
 
     state = {
-        _id:'',
         name:'',
+        phone:'',
+        email:'',
         volunteerList:[]
     }
 
@@ -45,6 +46,8 @@ class Volunteer extends Component{
         const VolunteerTable = this.state.volunteerList.map((volunteer, i) => (
             <tr key={i}>
                 <td width={300} height={50}>{volunteer.name}</td>
+                <td width={300} height={50}>{volunteer.phone}</td>
+                <td width={300} height={50}>{volunteer.email}</td>
             </tr>
         ))
 
@@ -56,6 +59,8 @@ class Volunteer extends Component{
                         <thead>
                             <tr>
                                 <th width={300} height={50}>Volunteer</th>
+                                <th width={300} height={50}>Phone Number</th>
+                                <th width={300} height={50}>E-mail</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -65,12 +70,28 @@ class Volunteer extends Component{
                 </div>
 
                 <div>
-                    <form>
+                    <form onSubmit={this.handleSubmit}>
+                        <p>Volunteer Name</p>
                         <input
                             name="name"
                             type="text"
-                            placeholder="Volunteer"
                             value={this.state.volunteerList.name}
+                            onChange={this.changeHandler}
+                        />
+                        <br></br>
+                        <p>Phone Number</p>
+                        <input
+                            name="phone"
+                            type="text"
+                            value={this.state.volunteerList.phone}
+                            onChange={this.changeHandler}
+                        />
+                        <br></br>
+                        <p>E-mail</p>
+                        <input
+                            name="email"
+                            type="text"
+                            value={this.state.volunteerList.email}
                             onChange={this.changeHandler}
                         />
                         <br></br>
