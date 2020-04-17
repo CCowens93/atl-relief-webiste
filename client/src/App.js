@@ -4,7 +4,7 @@ import './App.css';
 import Resource from './components/resource';
 import Home from './components/home';
 import Volunteer from './components/volunteer';
-import Form from './components/form'
+import Form from './components/volunteerForm'
 
 function App() {
   return (
@@ -15,8 +15,8 @@ function App() {
 
         <Link to="/" className="item">Home</Link>
         <Link to="/resource" className="item">Resources</Link>
-        <Link to="volunteer" className="itme">Volunteers</Link>
-        <Link to="form" className="item">Volunteer Form</Link>
+        <Link to="/volunteer" className="itme">Volunteers</Link>
+        <Link to="/form" className="item">Volunteer Form</Link>
 
         </div>
 

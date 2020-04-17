@@ -27,6 +27,7 @@ class Form extends Component {
         updates: '',
         none: '',
         other: '',
+        resetOnSubmit: false,
         formList: []
     }
 
@@ -45,12 +46,20 @@ class Form extends Component {
         axios.post('/api/form', this.state)
     }
 
+    resetPage = () => {
+        window.location.reload()
+        const reset = this.state.resetOnSubmit ? false: true;
+        this.setState({resetOnSubmit: reset})
+    }
+
     componentDidMount() {
         axios.get('/api/form')
-            .then((response) => {
-                this.setState({ formList: response.data })
+            .then((response => {
+                this.setState({ 
+                    formList: response.data 
+                })
                 console.log(response.data)
-            })
+            }))
             .catch((error) => {
                 console.log(error)
             })
@@ -61,24 +70,68 @@ class Form extends Component {
 
         console.log('From render()', this.state)
 
-        // const FormTable = this.state.formList.map((form, i) => (
-        //     <tr key={i}>
-        //         <td width={300} height={50}>{form.name}</td>
-        //         <td width={300} height={50}>{form.email}</td>
-        //         <td width={300} height={50}>{form.phone}</td>
-        //         <td width={300} height={50}>{form.address}</td>
-        //         <td width={300} height={50}>{form.contact}</td>
-        //         <td width={300} height={50}>{form.age}</td>
-        //         <td width={300} height={50}>{form.job}</td>
-        //         <td width={300} height={50}>{form.medicalRelief}</td>
-        //         <td width={300} height={50}>{form.typeOfHelp}</td>
-        //     </tr>
-        // ))
+        const FormTable = this.state.formList.map((form, i) => (
+            <tr key={i}>
+                <td width={300} height={50}>{form.name}</td>
+                <td width={300} height={50}>{form.email}</td>
+                <td width={300} height={50}>{form.phone}</td>
+                <td width={300} height={50}>{form.address}</td>
+                <td width={300} height={50}>{form.call}</td>
+                <td width={300} height={50}>{form.text}</td>
+                <td width={300} height={50}>{form.emailPref}</td>
+                <td width={300} height={50}>{form.paperMailer}</td>
+                <td width={300} height={50}>{form.age}</td>
+                <td width={300} height={50}>{form.job}</td>
+                <td width={300} height={50}>{form.medicalRelief}</td>
+                <td width={300} height={50}>{form.helpElderlyAndOrDisabled}</td>
+                <td width={300} height={50}>{form.deliverFood}</td>
+                <td width={300} height={50}>{form.mealPrep}</td>
+                <td width={300} height={50}>{form.sewing}</td>
+                <td width={300} height={50}>{form.deliverMailers}</td>
+                <td width={300} height={50}>{form.host}</td>
+                <td width={300} height={50}>{form.coverExpenses}</td>
+                <td width={300} height={50}>{form.searchForItems}</td>
+                <td width={300} height={50}>{form.updates}</td>
+                <td width={300} height={50}>{form.none}</td>
+                <td width={300} height={50}>{form.other}</td>
+            </tr>
+        ))
 
 
 
         return (
             <div>
+                    <div>
+                        <table>
+                            <thead>
+                                <tr>
+                                <th width={300} height={50}>Volunteer</th>
+                                <th width={300} height={50}>E-mail</th>
+                                <th width={300} height={50}>Phone</th>
+                                <th width={300} height={50}>Address</th>
+                                <th width={300} height={50}>Call</th>
+                                <th width={300} height={50}>Text</th>
+                                <th width={300} height={50}>Email Preferance</th>
+                                <th width={300} height={50}>Paper Mailer</th>
+                                <th width={300} height={50}>Age</th>
+                                <th width={300} height={50}>Job</th>
+                                <th width={300} height={50}>Medical Relief</th>
+                                <th width={300} height={50}>Help Elderly and/or Disabled</th>
+                                <th width={300} height={50}>Deliver Food</th>
+                                <th width={300} height={50}>Host</th>
+                                <th width={300} height={50}>Cover Expenses</th>
+                                <th width={300} height={50}>Search For Items</th>
+                                <th width={300} height={50}>Updates</th>
+                                <th width={300} height={50}>None</th>
+                                <th width={300} height={50}>Other</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {FormTable}
+                            </tbody>
+                        </table>
+                    </div>
+
                 <div className="VolunteerForm">
                     <form onSubmit={this.handleSubmit}>
                         <p>Volunteer Name</p>
@@ -141,7 +194,7 @@ class Form extends Component {
                         <br></br>
                         <p>Email</p>
                         <select
-                            name="email"
+                            name="emailPref"
                             onChange={this.changeHandler}
                             value={this.state.formList.emailPref}>
                             <option value="" hidden>Select</option>
@@ -153,10 +206,9 @@ class Form extends Component {
                         <p>Paper Mailer</p>
                         <select
                             name="paperMailer"
-                            type="checkbox"
                             onChange={this.changeHandler}
                             value={this.state.formList.paperMailer}>
-                            <option value="" disabled hidden></option>
+                            <option value="" hidden>Select</option>
                             <option value="Yes">Yes</option>
                             <option value="No">No</option>
                             </select>
@@ -165,20 +217,28 @@ class Form extends Component {
                         <p>Age Range</p>
                         <select
                             name="age"
-                            value={this.state.formList.age}
-                            onChange={this.changeHandler}>
-                            <option value="" disabled hidden>Age Range</option>
+                            onChange={this.changeHandler}
+                            value={this.state.formList.age}>
+                            <option value="" hidden>Select</option>
                             <option value="18oryounger">18 or Younger</option>
                             <option value="18-29">18-29</option>
                             <option value="30-45">30-45</option>
                             <option value="46-66">46-66</option>
                             <option value="67+">67+</option>
                         </select>
+                        <p>Job</p>
+                        <input
+                            name="job"
+                            type="text"
+                            value={this.state.formList.job}
+                            onChange={this.changeHandler}
+                        />
                         <p>Would you be willing and able to volunteer in medical relief efforts?</p>
                         <select
                             name="medicalRelief"
-                            value={this.state.formList.medicalRelief}
-                            onChange={this.changeHandler}>
+                            onChange={this.changeHandler}
+                            value={this.state.formList.medicalRelief}>
+                            
                             <option value="" hidden>Select</option>
                             <option value="Yes">Yes</option>
                             <option value="No">No</option>
@@ -307,6 +367,7 @@ class Form extends Component {
                         <input
                             type="submit"
                             value="Submit"
+                            onClick={this.resetPage}
                         />
 
                     </form>

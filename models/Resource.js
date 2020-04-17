@@ -8,7 +8,8 @@ const ResourceSchema = new Schema({
     website: String,
     phoneNumber: Number,
     email: String,
-    description: String
+    description: String,
+    resetOnSubmit: Boolean
 })
 
 mongoose.model('resource', ResourceSchema)

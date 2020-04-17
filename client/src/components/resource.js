@@ -11,6 +11,7 @@ class Resource extends Component {
         phoneNumber: '',
         email: '',
         description: '',
+        resetOnSubmit: false,
         resourceList: []
     }
 
@@ -27,6 +28,12 @@ class Resource extends Component {
     handleSubmit = (event) => {
         event.preventDefault()
         axios.post('/api/resource', this.state)
+    }
+
+    resetPage = () => {
+        window.location.reload()
+        const reset = this.state.resetOnSubmit ? false: true;
+        this.setState({resetOnSubmit: reset})
     }
 
     componentDidMount() {
@@ -79,50 +86,50 @@ class Resource extends Component {
                 </div>
                 <div className="ResourceForm">
                     <form onSubmit={this.handleSubmit}>
+                        <p>Resource</p>
                         <input
                             name="name"
                             type="text"
-                            placeholder="Resource"
                             value={this.state.resourceList.name}
                             onChange={this.changeHandler}
                         />
                         <br></br>
+                        <p>Location</p>
                         <input
                             name="location"
                             type="text"
-                            placeholder="Location"
                             value={this.state.resourceList.location}
                             onChange={this.changeHandler}
                         />
                         <br></br>
+                        <p>Website</p>
                         <input
                             name="website"
                             type="text"
-                            placeholder="Website"
                             value={this.state.resourceList.website}
                             onChange={this.changeHandler}
                         />
                         <br></br>
+                        <p>Phone Number</p>
                         <input
                             name="phoneNumber"
                             type="number"
-                            placeholder="Phone Number"
                             value={this.state.resourceList.phoneNumber}
                             onChange={this.changeHandler}
                         />
                         <br></br>
+                        <p>Email</p>
                         <input
                             name="email"
                             type="text"
-                            placeholder="Email"
                             value={this.state.resourceList.email}
                             onChange={this.changeHandler}
                         />
                         <br></br>
+                        <p>Description</p>
                         <input
                             name="description"
                             type="text"
-                            placeholder="Description"
                             value={this.state.resourceList.description}
                             onChange={this.changeHandler}
                         />
@@ -130,6 +137,7 @@ class Resource extends Component {
                         <input
                             type="submit"
                             value="Submit"
+                            onClick={this.resetPage}
                         />
 
                     </form>

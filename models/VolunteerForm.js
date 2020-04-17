@@ -5,13 +5,13 @@ const { Schema } = mongoose
 const VolunteerForm = new Schema({
     name: String,
     email: String,
-    phone: String,
+    phone: Number,
     address: String,
     call: String,
     text: String,
     emailPref: String,
     paperMailer: String,
-    age: Number,
+    age: String,
     job: String,
     medicalRelief: String,
     helpElderlyAndOrDisabled: String,
@@ -24,7 +24,8 @@ const VolunteerForm = new Schema({
     searchForItems: String,
     updates: String,
     none: String,
-    other: String
+    other: String,
+    resetOnSubmit: Boolean
 })
 
 mongoose.model('volunteerForm', VolunteerForm)

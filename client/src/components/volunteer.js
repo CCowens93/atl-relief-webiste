@@ -8,6 +8,7 @@ class Volunteer extends Component{
         name:'',
         phone:'',
         email:'',
+        resetOnSubmit: false,
         volunteerList:[]
     }
 
@@ -26,10 +27,18 @@ class Volunteer extends Component{
         axios.post('/api/volunteer', this.state)
     }
 
+    resetPage = () => {
+        window.location.reload()
+        const reset = this.state.resetOnSubmit ? false: true;
+        this.setState({resetOnSubmit: reset})
+    }
+
     componentDidMount(){
         axios.get('api/volunteer')
             .then((response => {
-                this.setState({ volunteerList: response.data})
+                this.setState({ 
+                    volunteerList: response.data
+                })
                 console.log(response.data)
             }))
             .catch((error) => {
@@ -95,10 +104,14 @@ class Volunteer extends Component{
                             onChange={this.changeHandler}
                         />
                         <br></br>
+                      
                         <input
                             type="submit"
                             value="Submit"
+                            onClick={this.resetPage}
+                            
                         />
+                        
                     </form>
                 </div>
 
