@@ -5,7 +5,6 @@ import axios from 'axios'
 class Resource extends Component {
 
     state = {
-        _id:'',
         name: '',
         location: '',
         website: '',

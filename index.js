@@ -3,6 +3,8 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
 require('./models/Resource');
+require('./models/Volunteer');
+require('./models/VolunteerForm')
 
 const app = express();
 
@@ -12,6 +14,8 @@ mongoose.connect(process.env.MONGODB_URI || `mongodb://localhost:27017/atlDb`);
 app.use(bodyParser.json());
 
 require('./routes/Resource')(app);
+require('./routes/Volunteer')(app);
+require('./routes/VolunteerForm')(app);
 
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('client/build'));
