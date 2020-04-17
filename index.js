@@ -2,12 +2,16 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
+require('./models/Resource');
+
 const app = express();
 
 mongoose.Promise = global.Promise;
 mongoose.connect(process.env.MONGODB_URI || `mongodb://localhost:27017/atlDb`);
 
 app.use(bodyParser.json());
+
+require('./routes/Resource')(app);
 
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('client/build'));
@@ -20,6 +24,7 @@ if (process.env.NODE_ENV === 'production') {
   }
 
 const PORT = process.env.PORT || 5000;
+
 app.listen(PORT, () => {
   console.log(`app running on port ${PORT}`)
 });

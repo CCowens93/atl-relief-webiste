@@ -3,9 +3,9 @@ const mongoose = require('mongoose')
 const Resource = mongoose.model('resource')
 
 module.exports = (app) => {
-    app.get('api/resource', async(req, res) => {
+    app.get('/api/resource', async(req, res) => {
         let resource = await Resource.find()
-        returnres.status(200).send(resource)
+        return res.status(200).send(resource)
     })
 
     app.post(`/api/resource`, async (req, res) => {
