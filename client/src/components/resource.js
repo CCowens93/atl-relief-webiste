@@ -86,7 +86,7 @@ class Resource extends Component {
                 </div>
                 <div className="ResourceForm">
                     <form onSubmit={this.handleSubmit}>
-                        <p>Resource</p>
+                        <label>Resource</label>
                         <input
                             name="name"
                             type="text"
@@ -94,7 +94,7 @@ class Resource extends Component {
                             onChange={this.changeHandler}
                         />
                         <br></br>
-                        <p>Location</p>
+                        <label>Location</label>
                         <input
                             name="location"
                             type="text"
@@ -102,7 +102,7 @@ class Resource extends Component {
                             onChange={this.changeHandler}
                         />
                         <br></br>
-                        <p>Website</p>
+                        <label>Website</label>
                         <input
                             name="website"
                             type="text"
@@ -110,7 +110,7 @@ class Resource extends Component {
                             onChange={this.changeHandler}
                         />
                         <br></br>
-                        <p>Phone Number</p>
+                        <label>Phone Number</label>
                         <input
                             name="phoneNumber"
                             type="number"
@@ -118,7 +118,7 @@ class Resource extends Component {
                             onChange={this.changeHandler}
                         />
                         <br></br>
-                        <p>Email</p>
+                        <label>Email</label>
                         <input
                             name="email"
                             type="text"
@@ -126,7 +126,7 @@ class Resource extends Component {
                             onChange={this.changeHandler}
                         />
                         <br></br>
-                        <p>Description</p>
+                        <label>Description</label>
                         <input
                             name="description"
                             type="text"

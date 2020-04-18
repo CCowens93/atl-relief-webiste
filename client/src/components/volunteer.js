@@ -5,39 +5,37 @@ import axios from 'axios'
 class Volunteer extends Component{
 
     state = {
-        name:'',
-        phone:'',
-        email:'',
+        name: '',
+        email: '',
+        phone: '',
+        address: '',
+        call: '',
+        text: '',
+        emailPref: '',
+        paperMailer: '',
+        age: '',
+        job: '',
+        medicalRelief: '',
+        helpElderlyAndOrDisabled: '',
+        deliverFood: '',
+        mealPrep: '',
+        sewing: '',
+        deliverMailers: '',
+        host: '',
+        coverExpenses: '',
+        searchForItems: '',
+        updates: '',
+        none: '',
+        other: '',
         resetOnSubmit: false,
-        volunteerList:[]
-    }
-
-    changeHandler = (event) => {
-        const name = event.target.name;
-        const value = event.target.value;
-
-        const newState = { ...this.state }
-        newState[name] = value;
-        this.setState(newState)
-
-    }
-
-    handleSubmit = (event) => {
-        event.preventDefault()
-        axios.post('/api/volunteer', this.state)
-    }
-
-    resetPage = () => {
-        window.location.reload()
-        const reset = this.state.resetOnSubmit ? false: true;
-        this.setState({resetOnSubmit: reset})
+        formList: []
     }
 
     componentDidMount(){
-        axios.get('api/volunteer')
+        axios.get('api/form')
             .then((response => {
                 this.setState({ 
-                    volunteerList: response.data
+                    formList: response.data
                 })
                 console.log(response.data)
             }))
@@ -49,16 +47,16 @@ class Volunteer extends Component{
 
     render(){
 
-        console.log('From render()', this.state)
-
-
-        const VolunteerTable = this.state.volunteerList.map((volunteer, i) => (
+        const FormTable = this.state.formList.map((form, i) => (
             <tr key={i}>
-                <td width={300} height={50}>{volunteer.name}</td>
-                <td width={300} height={50}>{volunteer.phone}</td>
-                <td width={300} height={50}>{volunteer.email}</td>
+                <td width={300} height={50}>{form.name}</td>
+                <td width={300} height={50}>{form.email}</td>
+                <td width={300} height={50}>{form.phone}</td>
+                <td width={300} height={50}>{form.address}</td>
+              
             </tr>
         ))
+        
 
         return(
             <div>
@@ -68,51 +66,15 @@ class Volunteer extends Component{
                         <thead>
                             <tr>
                                 <th width={300} height={50}>Volunteer</th>
-                                <th width={300} height={50}>Phone Number</th>
                                 <th width={300} height={50}>E-mail</th>
+                                <th width={300} height={50}>Phone Number</th>
+                                <th width={300} height={50}>Address</th>
                             </tr>
                         </thead>
                         <tbody>
-                            {VolunteerTable}
+                            {FormTable}
                         </tbody>
                     </table>
-                </div>
-
-                <div>
-                    <form onSubmit={this.handleSubmit}>
-                        <p>Volunteer Name</p>
-                        <input
-                            name="name"
-                            type="text"
-                            value={this.state.volunteerList.name}
-                            onChange={this.changeHandler}
-                        />
-                        <br></br>
-                        <p>Phone Number</p>
-                        <input
-                            name="phone"
-                            type="text"
-                            value={this.state.volunteerList.phone}
-                            onChange={this.changeHandler}
-                        />
-                        <br></br>
-                        <p>E-mail</p>
-                        <input
-                            name="email"
-                            type="text"
-                            value={this.state.volunteerList.email}
-                            onChange={this.changeHandler}
-                        />
-                        <br></br>
-                      
-                        <input
-                            type="submit"
-                            value="Submit"
-                            onClick={this.resetPage}
-                            
-                        />
-                        
-                    </form>
                 </div>
 
             </div>

@@ -14,7 +14,7 @@ code {
 
 .item {
 	text-decoration: none;
-  display: inline-block;
+    display: inline-block;
   
 }
 
@@ -36,4 +36,52 @@ code {
 .navbar a:hover {
 	background: linear-gradient(to bottom, #0061a7 5%, #007dc1 100%);
 	background-color: #0061a7;
+}
+
+.section{
+	display: inline-table;
+}
+
+.VolunteerForm{
+	margin: 10px auto;
+	max-width: 800px;
+	padding: 20px 12px 10px 20px;
+	font: 13px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+.VolunteerForm .section {
+	padding: 0;
+	display: block;
+	list-style: none;
+	margin: 10px 0 0 0;
+}
+
+.VolunteerForm label{
+	margin:0 0 3px 0;
+	padding:0px;
+	display:block;
+	font-weight: bold;
+}
+
+select{
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	border:1px solid #BEBEBE;
+	padding: 7px;
+	margin:0px;
+	outline: none;	
+}
+
+.VolunteerForm input[type=submit], .VolunteerForm input[type=button]{
+	background: #4B99AD;
+	padding: 8px 15px 8px 15px;
+	border: none;
+	color: #fff;
+}
+.VolunteerForm input[type=submit]:hover, .VolunteerForm input[type=button]:hover{
+	background: #4691A4;
+	box-shadow:none;
+	-moz-box-shadow:none;
+	-webkit-box-shadow:none;
 }
