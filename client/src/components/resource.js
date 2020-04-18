@@ -86,62 +86,97 @@ class Resource extends Component {
                 </div>
                 <div className="ResourceForm">
                     <form onSubmit={this.handleSubmit}>
+                        <ul>
+                            <li>
+                        <div className="ResourceInputs">
                         <label>Resource</label>
                         <input
                             name="name"
                             type="text"
+                            class="field-long"
                             value={this.state.resourceList.name}
                             onChange={this.changeHandler}
                         />
+                        </div>
+                        </li>
                         <br></br>
+                        <li>
+                        <div className="ResourceInputs">
                         <label>Location</label>
                         <input
                             name="location"
                             type="text"
+                            class="field-long"
                             value={this.state.resourceList.location}
                             onChange={this.changeHandler}
                         />
+                        </div>
+                        </li>
                         <br></br>
+                        <li>
+                        <div className="ResourceInputs">
                         <label>Website</label>
                         <input
                             name="website"
                             type="text"
+                            class="field-long"
                             value={this.state.resourceList.website}
                             onChange={this.changeHandler}
                         />
+                        </div>
+                        </li>
                         <br></br>
+                        <li>
+                        <div className="ResourceInputs">
                         <label>Phone Number</label>
                         <input
                             name="phoneNumber"
                             type="number"
+                            class="field-long"
                             value={this.state.resourceList.phoneNumber}
                             onChange={this.changeHandler}
                         />
+                        </div>
+                        </li>
                         <br></br>
+                        <li>
+                        <div className="ResourceInputs">
                         <label>Email</label>
                         <input
                             name="email"
                             type="text"
+                            class="field-long"
                             value={this.state.resourceList.email}
                             onChange={this.changeHandler}
                         />
+                        </div>
+                        </li>
                         <br></br>
+                        <li>
+                        <div className="ResourceInputs">
                         <label>Description</label>
                         <input
                             name="description"
                             type="text"
+                            class="field-long"
                             value={this.state.resourceList.description}
                             onChange={this.changeHandler}
                         />
+                        </div>
+                        </li>
                         <br></br>
+                        <li>
+                        <div className="ResourceInputs">
+
                         <input
                             type="submit"
                             value="Submit"
                             onClick={this.resetPage}
                         />
-
+                        </div>
+                        </li>
+                        </ul>
                     </form>
-
                 </div>
             </div>
         )

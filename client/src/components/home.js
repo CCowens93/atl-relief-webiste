@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 
-class Home extends Component{
-    render(){
-        return(
-            <div>
-
+import Atlanta from '../header.jpg'
+class Home extends Component {
+    render() {
+        return (
+            <div className="HomeHeader">
+                <img src={Atlanta} style={StyleSheet.absolutefill} alt="Atlanta Skyline"></img>
+      
             </div>
         )
     }

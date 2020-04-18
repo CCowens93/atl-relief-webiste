@@ -74,8 +74,13 @@ class Form extends Component {
             <div>
 
                 <div className="VolunteerForm">
+
                     <form onSubmit={this.handleSubmit}>
+
                         <div className="section">
+                            
+                            <h1>Intown Atlanta Volunteer Form</h1>
+                            <div className="FormInput">
                             <label>Volunteer Name</label>
 
                             <input
@@ -84,7 +89,8 @@ class Form extends Component {
                                 value={this.state.formList.name}
                                 onChange={this.changeHandler}
                             />
-
+                            </div>
+                            <div className="FormInput">
                             <label>E-mail</label>
 
                             <input
@@ -93,6 +99,8 @@ class Form extends Component {
                                 value={this.state.formList.email}
                                 onChange={this.changeHandler}
                             />
+                            </div>
+                             <div className="FormInput">
 
                             <label>Phone Number</label>
                             <input
@@ -101,7 +109,8 @@ class Form extends Component {
                                 value={this.state.formList.phone}
                                 onChange={this.changeHandler}
                             />
-
+                            </div>
+                             <div className="FormInput">
 
                             <label>Address</label>
 
@@ -111,6 +120,8 @@ class Form extends Component {
                                 value={this.state.formList.address}
                                 onChange={this.changeHandler}
                             />
+                            </div>
+                            <div className="FormInput">
 
                             <label>Age Range</label>
                             <select
@@ -124,6 +135,9 @@ class Form extends Component {
                                 <option value="46-66">46-66</option>
                                 <option value="67+">67+</option>
                             </select>
+
+                            </div>
+                            <div className="FormInput">
                             <label>Job Title</label>
                             <input
                                 name="job"
@@ -131,12 +145,13 @@ class Form extends Component {
                                 value={this.state.formList.job}
                                 onChange={this.changeHandler}
                             />
-                            
+                            </div>
 
-                        </div>
+                            </div>
 
                         <div className="section">
                             <h2>Contact Preference</h2>
+                            <div className="FormInput">
                             <label>Call</label>
                             <select
                                 name="call"
@@ -147,6 +162,9 @@ class Form extends Component {
                                 <option value="No">No</option>
 
                             </select>
+                            </div>
+                            <br></br>
+                            <div className="FormInput">
                             <label>Text</label>
                             <select
                                 name="text"
@@ -157,7 +175,9 @@ class Form extends Component {
                                 <option value="No">No</option>
 
                             </select>
+                            </div>
                             <br></br>
+                            <div className="FormInput">
                             <label>Email</label>
                             <select
                                 name="emailPref"
@@ -168,7 +188,9 @@ class Form extends Component {
                                 <option value="No">No</option>
 
                             </select>
+                            </div>
                             <br></br>
+                            <div className="FormInput">
                             <label>Paper Mailer</label>
                             <select
                                 name="paperMailer"
@@ -178,6 +200,7 @@ class Form extends Component {
                                 <option value="Yes">Yes</option>
                                 <option value="No">No</option>
                             </select>
+                            </div>
                         </div>
 
 
