@@ -16,6 +16,23 @@ h1{
 	display:inline-block
 }
 
+th{
+	border:solid;
+	font-size: 20px;
+	margin: 20px;
+}
+
+td{
+	border: solid;
+	border-width: 1px;
+}
+
+.wrapper{
+	margin:30px;
+	display:flex;
+
+}
+
 .item {
 	text-decoration: none;
 	display: inline-block;
@@ -26,13 +43,15 @@ h1{
 .navbar {
 	background-color: #333;
 	overflow: hidden;
-
+	text-align: left;
+	position: fixed;
+	top: 0;
+	width: 100%;
 }
 
 
 .navbar a {
 	color: #f0f0f0;
-	text-align: center;
 	padding: 14px 16px;
 	text-decoration: none;
 	font-size: 20px;
@@ -100,13 +119,22 @@ select {
 	-webkit-box-shadow: none;
 }
 
-.ResourceForm {
+.ListOfPeople{
+	margin:30px;
+	border: 30px;
+	display: inline-block;
+}
 
-	margin: 10px auto;
+.ResourceChart{
+	margin:60px auto;
+	max-width: 1100px;
+}
+
+.ResourceForm {
+	margin: 40px auto;
 	max-width: 400px;
 	padding: 20px 12px 10px 20px;
 	font: 13px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-
 }
 
 
@@ -136,6 +164,7 @@ select {
 }
 
 .ResourceForm input[type=submit],
+
 .form-style-1 input[type=button] {
 	background: #4B99AD;
 	padding: 8px 15px 8px 15px;
@@ -156,7 +185,7 @@ select {
   	height: 400px;
 	background-repeat: no-repeat;
 	background-size: cover;
-	position: relative;
+	position: static;
 }
 
 .FormInput{
@@ -166,3 +195,13 @@ select {
 	align-items: flex-start;
 }
 
+.MedicalReliefList{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	margin: 20px auto;
+}
+
+.HelpTable{
+	margin: 30px auto;
+}

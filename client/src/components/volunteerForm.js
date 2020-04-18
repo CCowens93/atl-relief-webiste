@@ -71,7 +71,7 @@ class Form extends Component {
 
 
         return (
-            <div>
+            <div className="wrapper">
 
                 <div className="VolunteerForm">
 
@@ -371,7 +371,6 @@ class Form extends Component {
                             <input
                                 name="other"
                                 type="text"
-                                placeholder="Other"
                                 value={this.state.formList.other}
                                 onChange={this.changeHandler}
                             />

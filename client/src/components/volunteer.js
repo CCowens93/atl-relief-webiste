@@ -59,16 +59,16 @@ class Volunteer extends Component{
         
 
         return(
-            <div>
+            <div className="wrapper">
 
-                <div>
+                <div className="ListOfPeople">
                     <table>
                         <thead>
                             <tr>
                                 <th width={300} height={50}>Volunteer</th>
                                 <th width={300} height={50}>E-mail</th>
                                 <th width={300} height={50}>Phone Number</th>
-                                <th width={300} height={50}>Address</th>
+                                <th width={300} height={50}>Location</th>
                             </tr>
                         </thead>
                         <tbody>

@@ -63,29 +63,11 @@ class Resource extends Component {
 
         return (
 
-            <div>
-                <div>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th width={300} height={50}>Resource</th>
-                                <th width={300} height={50}>Location</th>
-                                <th width={300} height={50}>Website</th>
-                                <th width={300} height={50}>Phone Number</th>
-                                <th width={300} height={50}>E-mail</th>
-                                <th width={300} height={50}>Description</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {ResourceTable}
-                        </tbody>
-                    </table>
-
-
-                </div>
+            <div className="wrapper">
+            
                 <div className="ResourceForm">
                     <form onSubmit={this.handleSubmit}>
-                        <ul>
+                        <ul> <h2>Form</h2>
                             <li>
                         <div className="ResourceInputs">
                         <label>Resource</label>
@@ -176,6 +158,26 @@ class Resource extends Component {
                         </li>
                         </ul>
                     </form>
+                </div>
+
+                <div className="ResourceChart">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th width={300} height={50}>Resource</th>
+                                <th width={300} height={50}>Location</th>
+                                <th width={300} height={50}>Website</th>
+                                <th width={300} height={50}>Phone Number</th>
+                                <th width={300} height={50}>E-mail</th>
+                                <th width={300} height={50}>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {ResourceTable}
+                        </tbody>
+                    </table>
+
+
                 </div>
             </div>
         )
