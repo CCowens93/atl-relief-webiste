@@ -49,7 +49,6 @@ class Resource extends Component {
 
     render() {
 
-        console.log('From render()', this.state)
 
         const ResourceTable = this.state.resourceList.map((resource, i) => (
             <tr key={i}>
@@ -93,7 +92,7 @@ class Resource extends Component {
                         <input
                             name="name"
                             type="text"
-                            class="field-long"
+                            className="field-long"
                             value={this.state.resourceList.name}
                             onChange={this.changeHandler}
                         />
@@ -106,7 +105,7 @@ class Resource extends Component {
                         <input
                             name="location"
                             type="text"
-                            class="field-long"
+                            className="field-long"
                             value={this.state.resourceList.location}
                             onChange={this.changeHandler}
                         />
@@ -119,7 +118,7 @@ class Resource extends Component {
                         <input
                             name="website"
                             type="text"
-                            class="field-long"
+                            className="field-long"
                             value={this.state.resourceList.website}
                             onChange={this.changeHandler}
                         />
@@ -132,7 +131,7 @@ class Resource extends Component {
                         <input
                             name="phoneNumber"
                             type="number"
-                            class="field-long"
+                            className="field-long"
                             value={this.state.resourceList.phoneNumber}
                             onChange={this.changeHandler}
                         />
@@ -145,7 +144,7 @@ class Resource extends Component {
                         <input
                             name="email"
                             type="text"
-                            class="field-long"
+                            className="field-long"
                             value={this.state.resourceList.email}
                             onChange={this.changeHandler}
                         />
@@ -158,7 +157,7 @@ class Resource extends Component {
                         <input
                             name="description"
                             type="text"
-                            class="field-long"
+                            className="field-long"
                             value={this.state.resourceList.description}
                             onChange={this.changeHandler}
                         />

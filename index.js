@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 require('./models/Resource');
 require('./models/Volunteer');
 require('./models/VolunteerForm')
+require('./models/Groups')
 
 const app = express();
 
@@ -16,6 +17,7 @@ app.use(bodyParser.json());
 require('./routes/Resource')(app);
 require('./routes/Volunteer')(app);
 require('./routes/VolunteerForm')(app);
+require('./routes/Groups')(app);
 
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('client/build'));

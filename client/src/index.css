@@ -12,6 +12,10 @@ code {
 		monospace;
 }
 
+h1{
+	display:inline-block
+}
+
 .item {
 	text-decoration: none;
 	display: inline-block;
@@ -43,14 +47,13 @@ code {
 
 .section {
 	display: flex;
-	
+	flex-direction: row;
 }
 
 
 
 .VolunteerForm {
-	display: flex;
-	flex-direction: row;
+	display: inline-block;
 	margin: 10px auto;
 	max-width: 800px;
 	padding: 20px 12px 10px 20px;
@@ -59,7 +62,7 @@ code {
 
 .VolunteerForm .section {
 	padding: 0;
-	display: block;
+	display: inline-block;
 	list-style: none;
 	margin: 10px 0 0 0;
 }

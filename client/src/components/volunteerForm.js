@@ -208,6 +208,7 @@ class Form extends Component {
 
                         <div className="section">
                             <h2>How can you, or how would you, best like to help?</h2>
+                            <div className="FormInput">
                             <p>Would you be willing and able to volunteer in medical relief efforts?</p>
                             <select
                                 name="medicalRelief"
@@ -219,7 +220,10 @@ class Form extends Component {
                                 <option value="No">No</option>
                                 <option value="Maybe">Maybe</option>
                             </select>
+                            </div>
 
+                            <br></br>
+                            <div className="FormInput">
                             <p>"Adopting" an elderly or disabled home to check in on and keep updated</p>
                             <select
                                 name="helpElderlyAndOrDisabled"
@@ -229,7 +233,10 @@ class Form extends Component {
                                 <option value="Yes">Yes</option>
                                 <option value="No">No</option>
                             </select>
+                            </div>
 
+                            <br></br>
+                            <div className="FormInput">
                             <p>Delivering food and necessity items to homes</p>
                             <select
                                 name="deliverFood"
@@ -240,7 +247,11 @@ class Form extends Component {
                                 <option value="No">No</option>
                             </select>
 
+                            </div>
 
+                            <br></br>
+
+                            <div className="FormInput">
                             <p>Meal Preperation (for those who cannot cook for themselves)</p>
                             <select
                                 name="mealPrep"
@@ -250,8 +261,10 @@ class Form extends Component {
                                 <option value="Yes">Yes</option>
                                 <option value="No">No</option>
                             </select>
+                            </div>
 
-
+                            <br></br>
+                            <div className="FormInput">
                             <p>Sewing necessity items</p>
                             <select
                                 name="sewing"
@@ -261,7 +274,11 @@ class Form extends Component {
                                 <option value="Yes">Yes</option>
                                 <option value="No">No</option>
                             </select>
+                            </div>
+                            
+                            <br></br>
 
+                            <div className="FormInput">
 
                             <p>Delivering paper information (mailers) to homes</p>
                             <select
@@ -273,7 +290,11 @@ class Form extends Component {
                                 <option value="No">No</option>
                             </select>
 
+                            </div>
 
+                            <br></br>
+
+                            <div className="FormInput">
                             <p>Hosting someone displaced by college or domestic violence shelters closing</p>
                             <select
                                 name="host"
@@ -283,8 +304,11 @@ class Form extends Component {
                                 <option value="Yes">Yes</option>
                                 <option value="No">No</option>
                             </select>
+                            </div>
 
+                            <br></br>
 
+                            <div className="FormInput">
                             <p>Covering small expense for specific needs of a person or family</p>
                             <select
                                 name="coverExpenses"
@@ -294,7 +318,11 @@ class Form extends Component {
                                 <option value="Yes">Yes</option>
                                 <option value="No">No</option>
                             </select>
+                            </div>
 
+                            <br></br>
+
+                            <div className="FormInput">
 
                             <p>Searching online for resources and hard-to-find itmes (such as medical accessories)</p>
                             <select
@@ -305,8 +333,11 @@ class Form extends Component {
                                 <option value="Yes">Yes</option>
                                 <option value="No">No</option>
                             </select>
+                            </div>
 
+                            <br></br>
 
+                            <div className="FormInput">
                             <p>I just want to be kept updated with what's going on around me</p>
                             <select
                                 name="updates"
@@ -316,7 +347,11 @@ class Form extends Component {
                                 <option value="Yes">Yes</option>
                                 <option value="No">No</option>
                             </select>
+                            </div>
 
+                            <br></br>
+
+                            <div className="FormInput">
 
                             <p>None of the above</p>
                             <select
@@ -327,8 +362,11 @@ class Form extends Component {
                                 <option value="Yes">Yes</option>
                                 <option value="No">No</option>
                             </select>
+                            </div>
 
+                            <br></br>
 
+                            <div className="FormInput">
                             <p>Other</p>
                             <input
                                 name="other"
@@ -337,6 +375,7 @@ class Form extends Component {
                                 value={this.state.formList.other}
                                 onChange={this.changeHandler}
                             />
+                            </div>
                         </div>
 
                         <div className="button">
