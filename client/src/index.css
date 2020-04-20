@@ -12,31 +12,62 @@ code {
 		monospace;
 }
 
-h1{
-	display:inline-block
+h1 {
+	display: inline-block;
 }
 
-th{
-	border:solid;
-	font-size: 20px;
-	margin: 20px;
+table {
+	display: inline-block;
+	table-layout: fixed;
+
 }
 
-td{
-	border: solid;
-	border-width: 1px;
+.HelpTable {
+	max-width: 12000px;
+	overflow: scroll;
+	margin: 10px;
+	width: 1400px;
+	height: 300px;
+	display: grid;
+
+	grid-template-columns: repeat(10, 80px);
+	grid-template-rows: repeat(2, 100px);
+	align-content: space-around;
+	justify-content: space-between;
 }
 
-.wrapper{
-	margin:30px;
-	display:flex;
+
+
+td, th {
+	white-space: nowrap;
+	border: 1px solid #ddd;
+	padding: 10px;
+}
+
+th {
+	background-color: #eee;
+
+	top: -1px;
+	z-index: 2;
+  }
+
+
+.tableWrapper {
+	margin: 125px 300px;
+	
+
+}
+
+.wrapper {
+	margin: 30px;
+	display: flex;
 
 }
 
 .item {
 	text-decoration: none;
 	display: inline-block;
-	position: fixed; 
+	position: fixed;
 }
 
 
@@ -119,14 +150,14 @@ select {
 	-webkit-box-shadow: none;
 }
 
-.ListOfPeople{
-	margin:30px;
+.ListOfPeople {
+	margin: 100px;
 	border: 30px;
 	display: inline-block;
 }
 
-.ResourceChart{
-	margin:60px auto;
+.ResourceChart {
+	margin: 60px auto;
 	max-width: 1100px;
 }
 
@@ -152,8 +183,8 @@ select {
 	font-weight: bold;
 }
 
-.ResourceInputs{
-	display:flex;
+.ResourceInputs {
+	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: flex-start;
@@ -173,7 +204,7 @@ select {
 }
 
 .ResourceForm input[type=submit]:hover,
-.form-style-1 input[type=button]:hover {
+.ResourceForm input[type=button]:hover {
 	background: #4691A4;
 	box-shadow: none;
 	-moz-box-shadow: none;
@@ -182,26 +213,31 @@ select {
 
 .HomeHeader img {
 	width: 100%;
-  	height: 400px;
+	height: 400px;
 	background-repeat: no-repeat;
 	background-size: cover;
 	position: static;
 }
 
-.FormInput{
-	display:flex;
+.FormInput {
+	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: flex-start;
 }
 
-.MedicalReliefList{
+.MedicalReliefList {
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
 	margin: 20px auto;
 }
 
-.HelpTable{
-	margin: 30px auto;
+
+
+.table2 {
+	margin: 80px auto;
 }
+
+
+

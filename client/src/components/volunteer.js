@@ -62,7 +62,7 @@ class Volunteer extends Component{
             <div className="wrapper">
 
                 <div className="ListOfPeople">
-                    <table>
+                    <table cellpadding="5px" cellspacing="2px" class="PerformanceTable">
                         <thead>
                             <tr>
                                 <th width={300} height={50}>Volunteer</th>

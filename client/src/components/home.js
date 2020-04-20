@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import Atlanta from '../header.jpg'
+import Atlanta from '../skyline.jpg'
 class Home extends Component {
     render() {
         return (

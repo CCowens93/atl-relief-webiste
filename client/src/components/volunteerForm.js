@@ -209,7 +209,7 @@ class Form extends Component {
                         <div className="section">
                             <h2>How can you, or how would you, best like to help?</h2>
                             <div className="FormInput">
-                            <p>Would you be willing and able to volunteer in medical relief efforts?</p>
+                            <label>Would you be willing and able to volunteer in medical relief efforts?</label>
                             <select
                                 name="medicalRelief"
                                 onChange={this.changeHandler}
@@ -224,7 +224,7 @@ class Form extends Component {
 
                             <br></br>
                             <div className="FormInput">
-                            <p>"Adopting" an elderly or disabled home to check in on and keep updated</p>
+                            <label>"Adopting" an elderly or disabled home to check in on and keep updated</label>
                             <select
                                 name="helpElderlyAndOrDisabled"
                                 onChange={this.changeHandler}
@@ -237,7 +237,7 @@ class Form extends Component {
 
                             <br></br>
                             <div className="FormInput">
-                            <p>Delivering food and necessity items to homes</p>
+                            <label>Delivering food and necessity items to homes</label>
                             <select
                                 name="deliverFood"
                                 onChange={this.changeHandler}
@@ -252,7 +252,7 @@ class Form extends Component {
                             <br></br>
 
                             <div className="FormInput">
-                            <p>Meal Preperation (for those who cannot cook for themselves)</p>
+                            <label>Meal Preperation (for those who cannot cook for themselves)</label>
                             <select
                                 name="mealPrep"
                                 onChange={this.changeHandler}
@@ -265,7 +265,7 @@ class Form extends Component {
 
                             <br></br>
                             <div className="FormInput">
-                            <p>Sewing necessity items</p>
+                            <label>Sewing necessity items</label>
                             <select
                                 name="sewing"
                                 onChange={this.changeHandler}
@@ -280,7 +280,7 @@ class Form extends Component {
 
                             <div className="FormInput">
 
-                            <p>Delivering paper information (mailers) to homes</p>
+                            <label>Delivering paper information (mailers) to homes</label>
                             <select
                                 name="deliverMailers"
                                 onChange={this.changeHandler}
@@ -295,7 +295,7 @@ class Form extends Component {
                             <br></br>
 
                             <div className="FormInput">
-                            <p>Hosting someone displaced by college or domestic violence shelters closing</p>
+                            <label>Hosting someone displaced by college or domestic violence shelters closing</label>
                             <select
                                 name="host"
                                 onChange={this.changeHandler}
@@ -309,7 +309,7 @@ class Form extends Component {
                             <br></br>
 
                             <div className="FormInput">
-                            <p>Covering small expense for specific needs of a person or family</p>
+                            <label>Covering small expense for specific needs of a person or family</label>
                             <select
                                 name="coverExpenses"
                                 onChange={this.changeHandler}
@@ -324,7 +324,7 @@ class Form extends Component {
 
                             <div className="FormInput">
 
-                            <p>Searching online for resources and hard-to-find itmes (such as medical accessories)</p>
+                            <label>Searching online for resources and hard-to-find itmes (such as medical accessories)</label>
                             <select
                                 name="searchForItems"
                                 onChange={this.changeHandler}
@@ -338,7 +338,7 @@ class Form extends Component {
                             <br></br>
 
                             <div className="FormInput">
-                            <p>I just want to be kept updated with what's going on around me</p>
+                            <label>I just want to be kept updated with what's going on around me</label>
                             <select
                                 name="updates"
                                 onChange={this.changeHandler}
@@ -353,7 +353,7 @@ class Form extends Component {
 
                             <div className="FormInput">
 
-                            <p>None of the above</p>
+                            <label>None of the above</label>
                             <select
                                 name="none"
                                 onChange={this.changeHandler}
@@ -367,7 +367,7 @@ class Form extends Component {
                             <br></br>
 
                             <div className="FormInput">
-                            <p>Other</p>
+                            <label>Other</label>
                             <input
                                 name="other"
                                 type="text"
