@@ -26,7 +26,6 @@ class Form extends Component {
         searchForItems: '',
         updates: '',
         none: '',
-        other: '',
         resetOnSubmit: false,
         formList: []
     }
@@ -366,15 +365,7 @@ class Form extends Component {
 
                             <br></br>
 
-                            <div className="FormInput">
-                            <label>Other</label>
-                            <input
-                                name="other"
-                                type="text"
-                                value={this.state.formList.other}
-                                onChange={this.changeHandler}
-                            />
-                            </div>
+                            
                         </div>
 
                         <div className="button">

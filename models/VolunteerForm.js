@@ -24,7 +24,6 @@ const VolunteerForm = new Schema({
     searchForItems: String,
     updates: String,
     none: String,
-    other: String,
     resetOnSubmit: Boolean
 })
 
