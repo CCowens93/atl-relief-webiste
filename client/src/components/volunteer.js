@@ -186,14 +186,7 @@ class Volunteer extends Component {
             }
         })
 
-        const List =
-            <tr>
-                <td>{MailersVolunteer}</td>
-                <td>{HostVolunteer}</td>
-                <td>{CoverExpensesVolunteer}</td>
-                <td>{SearchForItemsVolunteer}</td>
-                <td>{UpdatesVolunteer}</td>
-            </tr>
+
 
 
 

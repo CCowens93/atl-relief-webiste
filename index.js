@@ -14,10 +14,10 @@ mongoose.connect(process.env.MONGODB_URI || `mongodb://localhost:27017/atlDb`);
 
 app.use(bodyParser.json());
 
-require('./routes/Resource')(app);
-require('./routes/Volunteer')(app);
-require('./routes/VolunteerForm')(app);
-require('./routes/Groups')(app);
+require('./routes/resource')(app);
+require('./routes/volunteer')(app);
+require('./routes/volunteerForm')(app);
+require('./routes/groups')(app);
 
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('client/build'));

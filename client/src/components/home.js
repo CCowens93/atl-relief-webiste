@@ -33,8 +33,8 @@ class Home extends Component {
     
     render() {
 
-        const images = pics.map((image) =>
-        <img src={image.src} width={360} height={300} alt="first array of images"></img>
+        const images = pics.map((image, i) =>
+        <img key={i} src={image.src} width={360} height={300} alt="first array of images"></img>
 
     )
         return (
